@@ -1,0 +1,121 @@
+
+/* Navbar.css */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --deep-blue: #0f2a44;
+  --cream: #f5f1e6;
+  --accent: #c6a664;
+}
+
+.navbar {
+  width: 100%;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(15, 42, 68, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo span {
+  font-family: "Cinzel", serif;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  color: var(--deep-blue);
+}
+
+/* Desktop Nav */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--deep-blue);
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.cta {
+  padding: 0.5rem 1.2rem;
+  background-color:var(--deep-blue);
+  color: rgb(255, 255, 255) !important;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  border: 1.5px solid var(--deep-blue);
+  background-color: transparent;
+  color: var(--deep-blue) !important;
+}
+
+/* Mobile Menu Icon */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 2px;
+  background: var(--deep-blue);
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(15, 42, 68, 0.1);
+}
+
+.mobile-nav a {
+  font-family: "Inter", sans-serif;
+  color: var(--deep-blue);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

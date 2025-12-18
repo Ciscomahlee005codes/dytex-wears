@@ -1,0 +1,141 @@
+.testimonial-section {
+  width: 100%;
+  background: var(--deep-blue); /* Blue background */
+  padding: 5rem 1rem;
+  color: #ffffff; /* White text */
+  text-align: center;
+}
+
+.over-head {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+}
+
+.testimonial-wrap {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.arrow {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #f5f1e6; /* lighter arrow color */
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow.left {
+  left: -40px;
+}
+
+.arrow.right {
+  right: -40px;
+}
+
+.arrow:hover {
+  color: var(--accent); /* golden accent on hover */
+}
+
+.content-test {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-test > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+}
+
+.content-test > div.active {
+  position: relative;
+  opacity: 1;
+}
+
+.customer-pics {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent); /* golden border */
+  margin-bottom: 1rem;
+}
+
+.customer-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #ffffff;
+}
+
+.test-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: auto;
+  color: #f5f1e6; /* soft white for text */
+}
+
+.star-box {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 1rem;
+}
+
+.star-box svg {
+  color: gold; /* golden stars */
+  font-size: 1rem;
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #f5f1e6; /* light border */
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--accent); /* golden active dot */
+  transform: scale(1.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .arrow.left, .arrow.right {
+    display: none;
+  }
+  .customer-pics {
+    width: 80px;
+    height: 80px;
+  }
+  .test-text {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+  .over-head {
+    font-size: 2rem;
+  }
+}
