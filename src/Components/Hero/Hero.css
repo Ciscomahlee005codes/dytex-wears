@@ -93,7 +93,7 @@
 }
 
 .img-card {
-  background: url("../../assets/Adire-2.jpeg") center/cover no-repeat;
+  background: url("../../assets/Adire-f4.jpeg") center/cover no-repeat;
   border-radius: 20px;
   aspect-ratio: 3/4;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
@@ -105,6 +105,7 @@
 }
 
 .img-card:nth-child(3) {
+   background: url("../../assets/Adire-2.jpeg") center/cover no-repeat;
   grid-column: span 2;
 }
 

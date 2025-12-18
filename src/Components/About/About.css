@@ -28,12 +28,12 @@
 }
 
 .about-img.main {
-  background-image: url("../../assets/Adire-8.jpeg");
+  background-image: url("../../assets/Adire-f5.jpeg");
   aspect-ratio: 3 / 4;
 }
 
 .about-img.overlay {
-  background-image: url("../../assets/Adire-9.jpeg");
+  background-image: url("../../assets/Adire-f3.jpeg");
   width: 60%;
   aspect-ratio: 1 / 1.2;
   position: absolute;
