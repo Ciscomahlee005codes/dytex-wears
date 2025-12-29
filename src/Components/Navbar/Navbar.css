@@ -1,5 +1,3 @@
-
-/* Navbar.css */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;500;600&display=swap");
 
 :root {
@@ -17,6 +15,9 @@
   z-index: 1000;
 }
 
+/* ================= */
+/* CONTAINER */
+/* ================= */
 .nav-container {
   max-width: 1200px;
   margin: auto;
@@ -26,7 +27,9 @@
   justify-content: space-between;
 }
 
-/* Logo */
+/* ================= */
+/* LOGO */
+/* ================= */
 .logo span {
   font-family: "Cinzel", serif;
   font-size: 1.6rem;
@@ -34,7 +37,9 @@
   color: var(--deep-blue);
 }
 
-/* Desktop Nav */
+/* ================= */
+/* DESKTOP NAV */
+/* ================= */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -64,58 +69,114 @@
   width: 100%;
 }
 
+/* CTA */
 .cta {
   padding: 0.5rem 1.2rem;
-  background-color:var(--deep-blue);
-  color: rgb(255, 255, 255) !important;
+  background: var(--deep-blue);
+  color: white !important;
   border-radius: 30px;
   transition: all 0.3s ease;
 }
 
 .cta:hover {
+  background: transparent;
   border: 1.5px solid var(--deep-blue);
-  background-color: transparent;
   color: var(--deep-blue) !important;
 }
 
-/* Mobile Menu Icon */
+/* ================= */
+/* HAMBURGER */
+/* ================= */
 .menu-toggle {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  width: 28px;
+  height: 22px;
+  position: relative;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
-.line {
-  width: 25px;
+.menu-toggle span {
+  position: absolute;
+  width: 100%;
   height: 2px;
   background: var(--deep-blue);
+  left: 0;
+  transition: all 0.35s ease;
 }
 
-/* Mobile Nav */
+.menu-toggle span:nth-child(1) {
+  top: 0;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle span:nth-child(3) {
+  bottom: 0;
+}
+
+/* X ANIMATION */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+
+/* ================= */
+/* MOBILE NAV */
+/* ================= */
 .mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background: var(--cream);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1.5rem;
-  border-top: 1px solid rgba(15, 42, 68, 0.1);
+  padding: 2rem 1.5rem;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: all 0.35s ease;
+}
+
+.mobile-nav.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .mobile-nav a {
   font-family: "Inter", sans-serif;
   color: var(--deep-blue);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
-/* Responsive */
+/* ================= */
+/* RESPONSIVE */
+/* ================= */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
 
   .menu-toggle {
-    display: flex;
+    display: block;
   }
 }

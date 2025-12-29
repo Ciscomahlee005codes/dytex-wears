@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import "./About.css";
 
+import imgMain from "../../assets/Adire-f5.jpeg";
+import imgOverlay from "../../assets/Adire-f3.jpeg";
+
 const About = () => {
   return (
     <section className="about" id="about">
@@ -13,8 +16,13 @@ const About = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="about-img main" />
-          <div className="about-img overlay" />
+          <div className="about-img main">
+            <img src={imgMain} alt="Adire handcrafted fabric" />
+          </div>
+
+          <div className="about-img overlay">
+            <img src={imgOverlay} alt="Adire traditional pattern" />
+          </div>
         </motion.div>
 
         {/* Text */}

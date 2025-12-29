@@ -1,9 +1,9 @@
-/* Hero.css */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap");
 
 .hero {
   background: linear-gradient(180deg, var(--cream), #f0e9da);
-  padding: 5rem 1.5rem;
+  padding: clamp(3rem, 6vw, 5rem) 1.2rem;
+  overflow: hidden;
 }
 
 .hero-container {
@@ -11,30 +11,39 @@
   margin: auto;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
   gap: 3rem;
+  align-items: center;
 }
 
-/* Text */
-/* .hero-text{
-    margin-bottom: 3rem;
-} */
+/* TEXT */
 .hero-text .badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
+
+  font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+  letter-spacing: clamp(1px, 0.4vw, 2px);
+
   text-transform: uppercase;
   color: var(--deep-blue);
+
   border: 1px solid var(--accent);
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
+  padding: clamp(0.35rem, 0.8vw, 0.45rem)
+           clamp(0.7rem, 2vw, 0.9rem);
+
+  border-radius: 999px;
   margin-bottom: 1.2rem;
+
+  text-align: center;
+  white-space: normal;
+  max-width: 100%;
 }
+
 
 .hero-text h1 {
   font-family: "Playfair Display", serif;
-  font-size: 3.2rem;
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
   line-height: 1.15;
   color: var(--deep-blue);
   margin-bottom: 1rem;
@@ -52,9 +61,11 @@
   margin-bottom: 2rem;
 }
 
+/* ACTIONS */
 .hero-actions {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .hero-btn {
@@ -85,57 +96,65 @@
   color: var(--cream);
 }
 
-/* Images */
+/* IMAGES */
 .hero-images {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .img-card {
-  background: url("../../assets/Adire-f4.jpeg") center/cover no-repeat;
+  width: 100%;
+  aspect-ratio: 3 / 4;
   border-radius: 20px;
-  aspect-ratio: 3/4;
+  overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
-
-.img-card:nth-child(2) {
-     background: url("../../assets/Adire-7.jpeg") center/cover no-repeat;
-  transform: translateY(20px);
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 KEY FIX */
+  display: block;
 }
 
-.img-card:nth-child(3) {
-   background: url("../../assets/Adire-2.jpeg") center/cover no-repeat;
+/* Wide card */
+.img-wide {
   grid-column: span 2;
 }
 
-/* Responsive */
+/* TABLET */
 @media (max-width: 900px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-text p {
-    margin: auto auto 2rem;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
   .hero-images {
     grid-template-columns: repeat(3, 1fr);
-    transform: translate(15%, 0%);
   }
 
-  .img-card:nth-child(2) {
-    transform: none;
+  .img-wide {
+    grid-column: span 1;
   }
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
-  .hero-text h1 {
-    font-size: 2.4rem;
+  .hero-images {
+    grid-template-columns: 1fr;
+  }
+
+  .img-card {
+    aspect-ratio: 4 / 5;
+  }
+    .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
   }
 }
+
+
+

@@ -1,4 +1,3 @@
-// Navbar.jsx
 import { useState } from "react";
 import "./Navbar.css";
 
@@ -6,7 +5,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${open ? "open" : ""}`}>
       <div className="nav-container">
         {/* Logo */}
         <div className="logo">
@@ -18,40 +17,32 @@ const Navbar = () => {
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#gallery">Gallery</a>
-           <a href="#testimonials">Testimonials</a>
-          <a href="#contact" className="cta">
-            Contact
-          </a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact" className="cta">Contact</a>
         </nav>
 
-        {/* Mobile Menu Icon */}
-        <div className="menu-toggle" onClick={() => setOpen(!open)}>
-          <span className={open ? "line open" : "line"}></span>
-          <span className={open ? "line open" : "line"}></span>
-          <span className={open ? "line open" : "line"}></span>
-        </div>
+        {/* Mobile Toggle */}
+        <button
+          className={`menu-toggle ${open ? "open" : ""}`}
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
 
       {/* Mobile Nav */}
-      {open && (
-        <div className="mobile-nav">
-          <a href="#home" onClick={() => setOpen(false)}>
-            Home
-          </a>
-          <a href="#about" onClick={() => setOpen(false)}>
-            About
-          </a>
-          <a href="#gallery" onClick={() => setOpen(false)}>
-            Gallery
-          </a>
-          <a href="#process" onClick={() => setOpen(false)}>
-            Process
-          </a>
-          <a href="#contact" className="cta" onClick={() => setOpen(false)}>
-            Contact
-          </a>
-        </div>
-      )}
+      <div className={`mobile-nav ${open ? "show" : ""}`}>
+        <a href="#home" onClick={() => setOpen(false)}>Home</a>
+        <a href="#about" onClick={() => setOpen(false)}>About</a>
+        <a href="#gallery" onClick={() => setOpen(false)}>Gallery</a>
+        <a href="#testimonials" onClick={() => setOpen(false)}>Testimonials</a>
+        <a href="#contact" className="cta" onClick={() => setOpen(false)}>
+          Contact
+        </a>
+      </div>
     </header>
   );
 };

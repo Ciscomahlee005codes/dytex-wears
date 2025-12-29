@@ -1,6 +1,9 @@
-/* Hero.jsx */
 import { motion } from "framer-motion";
 import "./Hero.css";
+
+import img1 from "../../assets/Adire-f4.jpeg";
+import img2 from "../../assets/Adire-7.jpeg";
+import img3 from "../../assets/Adire-2.jpeg";
 
 const textVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -24,10 +27,9 @@ const Hero = () => {
           animate="visible"
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="badge">Handcrafted • Authentic • Adire</span>
+          <span className="badge">Handcrafted • Authentic • Adire •</span>
           <h1>
-            Wear Culture.<br />
-            Wear <span>Adire</span>.
+            Wear Culture.<br /> Wear <span>Adire</span>.
           </h1>
           <p>
             Premium handmade Adire pieces crafted with tradition,
@@ -40,7 +42,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Product Showcase */}
+        {/* Images */}
         <motion.div
           className="hero-images"
           variants={imageVariant}
@@ -48,15 +50,18 @@ const Hero = () => {
           animate="visible"
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
         >
-          <div className="img-card"></div>
-          <div className="img-card"></div>
-          <div className="img-card"></div>
-        </motion.div>
-      </div>
+          <div className="img-card">
+            <img src={img1} alt="Adire fabric design 1" />
+          </div>
 
-      {/* Scroll Indicator */}
-      <div className="scroll-indicator">
-        <span></span>
+          <div className="img-card">
+            <img src={img2} alt="Adire fabric design 2" />
+          </div>
+
+          <div className="img-card img-wide">
+            <img src={img3} alt="Adire fabric design 3" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

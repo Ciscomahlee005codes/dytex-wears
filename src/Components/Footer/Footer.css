@@ -84,6 +84,20 @@
   border-top: 1px solid rgba(255,255,255,0.2);
   padding-top: 1rem;
 }
+.footer-credit {
+  background: #0c2238;
+  color: rgba(245, 241, 230, 0.8);
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.8rem 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-credit span {
+  color: var(--accent);
+  font-weight: 500;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
