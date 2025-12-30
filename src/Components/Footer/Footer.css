@@ -43,10 +43,55 @@
   list-style: none;
   padding: 0;
 }
-
+/* Quick Links with Icons */
 .footer-links ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin-bottom: 0.7rem;
+  font-size: 0.95rem;
 }
+
+.footer-links ul li svg {
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+/* Contact Icons */
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.footer-contact p svg {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #0f2a44;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(198, 166, 100, 0.35);
+}
+
 
 .footer-links ul li a {
   color: var(--cream);

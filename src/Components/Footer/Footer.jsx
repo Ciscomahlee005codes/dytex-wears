@@ -1,6 +1,11 @@
 import React from "react";
 import "./Footer.css";
-import { FaWhatsapp } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaChevronRight,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -20,29 +25,48 @@ const Footer = () => {
           <div className="footer-links">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li>
+                <FaChevronRight />
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <FaChevronRight />
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <FaChevronRight />
+                <a href="#gallery">Gallery</a>
+              </li>
+              <li>
+                <FaChevronRight />
+                <a href="#contact">Contact</a>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div className="footer-contact">
             <h3>Contact</h3>
-            <p>+234 803 644 1504</p>
-            <p>info@dytexwears.com</p>
 
-            <div className="social-icons">
-              <a
-                href="https://wa.me/2348036441504"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat on WhatsApp"
-              >
-                <FaWhatsapp />
-              </a>
-            </div>
+            <p>
+              <FaPhoneAlt />
+              <span>+234 803 644 1504</span>
+            </p>
+
+            <p>
+              <FaEnvelope />
+              <span>info@dytexwears.com</span>
+            </p>
+
+            <a
+              href="https://wa.me/2348036441504"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-btn"
+            >
+              <FaWhatsapp />
+              <span>Chat on WhatsApp</span>
+            </a>
           </div>
         </div>
 
@@ -51,7 +75,7 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* 👇 Credit Section */}
+      {/* Credit */}
       <div className="footer-credit">
         Designed & Built by <span>MegTech</span>
       </div>
