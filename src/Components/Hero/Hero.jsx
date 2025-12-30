@@ -37,8 +37,10 @@ const Hero = () => {
           </p>
 
           <div className="hero-actions">
-            <a href="#collection" className="hero-btn primary">View Collection</a>
-            <a href="#contact" className="hero-btn secondary">Contact Us</a>
+            <a href="#gallery" className="hero-btn primary">View Collection</a>
+            <a href="https://wa.me/2348036441504"
+              target="_blank"
+              rel="noopener noreferrer" className="hero-btn secondary">Contact Us</a>
           </div>
         </motion.div>
 
